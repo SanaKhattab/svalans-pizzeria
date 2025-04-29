@@ -1,77 +1,66 @@
-/*kontrolerar hela sidan*/
+/* Återställ standardmarginal, utfyllnad och teckensnitt för alla element */
 * {
   margin: 0;
   padding: 0;
   font-family: Verdana, Geneva, Tahoma, sans-serif;
 }
+/* Kroppsstyling */
 body {
   margin: 0;
   font-family: Arial, Helvetica, sans-serif;
-  background-image: url("../img/bild2.jpg");
+  background-image: url("../img/bilden.jpg");
   background-repeat: no-repeat;
   background-size: cover;
   background-position: 0px 110px;
 }
+/* Centrera bilder */
 img {
   display: block;
   margin-left: auto;
   margin-right: auto;
 }
-
+/* Ta bort liststil */
 ul {
   list-style: none;
 }
-
-a {
-  text-decoration: none;
-  color: white;
-  text-align: center;
-}
-
+/* Header styling */
 .header {
   min-height: 100vh;
   width: 100%;
   background-position: center;
+  background-size: cover;
+  position: relative;
 }
-
+/* Logo styling */
 .logo {
   display: inline-block;
   margin-left: 10px;
 }
-
+/* Navigation styling */
 .nav {
   width: 100%;
+  height: 100%;
   display: flex;
   padding: 0;
   align-items: center;
   overflow: hidden;
-}
-
-.nav {
-  width: 100%;
-  height: 100%;
   position: fixed;
   background-color: #ff465e;
-  overflow: hidden;
+  max-height: 0;
+  transition: max-height 0.5s ease-out;
 }
-
+/* Menu link styling */
 .menu a {
   display: block;
   padding: 30px;
   color: #fff;
 }
-
-.nav {
-  max-height: 0;
-  transition: max-height 0.5s ease-out;
-}
-
+/* Hamburger icon styling */
 .hamb {
   cursor: pointer;
   float: right;
   padding: 40px 20px;
 } /* Style label tag */
-
 .hamb-line {
   background: #fff;
   display: block;
@@ -122,36 +111,11 @@ a {
   padding: 23px 16px;
   font-size: 20px;
 }
-
 .topnav {
   flex: 1;
   text-align: center;
   overflow: hidden;
 }
-/* för att göra en passande distanse mellan namn på menyn*/
-
-/* Responsiveness */
-@media (min-width: 768px) {
-  .nav {
-    max-height: none;
-    top: 0px;
-    position: relative;
-    float: right;
-    width: fit-content;
-    background-color: transparent;
-  }
-  .menu li {
-    float: left;
-  }
-  .menu a:hover {
-    color: #ff465e;
-  }
-
-  .hamb {
-    display: none;
-  }
-}
-
 #content-title {
   font-size: 50px;
   font-style: italic;
@@ -205,35 +169,37 @@ de och den blir färgläggad efter 0.4 sekunder
   width: 100%;
 }
 
-.maps {
-  margin: 40px -80px 0px;
-  width: 100%;
-  display: inline;
+.text-box {
+  width: 90%;
+  color: #fff;
   position: absolute;
-  top: 35%;
+  top: 40%;
   bottom: 50%;
-  float: none;
-  text-align: right;
+  text-align: left;
+  padding: 10px 30px;
 }
 
-.link {
-  position: absolute;
-  bottom: 0;
-  text-align: center;
-  width: 100%;
+.text-box h2 {
+  font-size: 50px;
 }
 
-.vid {
-  margin: 10px 50px 35px;
-  display: inline;
-  position: absolute;
-  top: 35%;
-  bottom: 50%;
-  float: none;
+.text-box p {
+  margin: 10px 0px 35px;
+  font-size: 15px;
+  color: #fff;
 }
 
-/* Responsiveness för mindre skärmar, som telefoner */
-@media (max-width: 768px) {
+.text-box a {
+  text-decoration: none;
+  color: white;
+}
+
+.boka a {
+  padding: 0px;
+  color: #fff;
+}
+
+@media (min-width: 768px) {
   .nav {
     max-height: none;
     top: 0px;
@@ -244,24 +210,20 @@ de och den blir färgläggad efter 0.4 sekunder
     display: inline;
   }
 
-  .menu li {
-    float: left;
-  }
-
-  .menu a:hover {
-    color: #ff465e;
-  }
-
   .hamb {
     display: none;
   }
-
   .topnav a {
     display: block;
     text-align: center;
     padding: 14px 16px;
     text-decoration: none;
   }
+
+  /*
+för att markera de på röd färg när man stoppar hos 
+de och den blir färgläggad efter 0.4 sekunder
+*/
   .topnav a:hover {
     color: red;
     transition: 0.4s;
@@ -292,15 +254,17 @@ de och den blir färgläggad efter 0.4 sekunder
     width: 100%;
   }
 
-  .maps {
-    padding: 80px;
-    top: 60%;
-    bottom: auto;
-    left: 0;
-    right: 70px;
+  .menu li {
+    float: left;
   }
-  a {
-    text-align: center;
+  .menu a:hover {
+    color: #ff465e;
+  }
+  .boka li {
+    float: left;
+  }
+  .boka a:hover {
+    color: #ff465e;
   }
 }
 
@@ -333,9 +297,9 @@ de och den blir färgläggad efter 0.4 sekunder
   }
 
   /*
-    för att markera de på röd färg när man stoppar hos 
-    de och den blir färgläggad efter 0.4 sekunder
-    */
+för att markera de på röd färg när man stoppar hos 
+de och den blir färgläggad efter 0.4 sekunder
+*/
   .topnav a:hover {
     color: red;
     transition: 0.4s;
@@ -365,22 +329,11 @@ de och den blir färgläggad efter 0.4 sekunder
   .topnav ul :hover ::after {
     width: 100%;
   }
-  .maps {
-    padding: 80px;
-    top: 60%;
-    bottom: auto;
-    left: 0;
-    right: 70px;
-  }
 
   .menu li {
     float: left;
   }
   .menu a:hover {
     color: #ff465e;
-  }
-
-  a {
-    text-align: center;
   }
 }

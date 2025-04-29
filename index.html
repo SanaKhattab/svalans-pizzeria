@@ -1,0 +1,86 @@
+<!--definiera att dokumentet baserar sig på HTML5-->
+<!DOCTYPE html>
+<!--Definiera att svenska är ett språk för alla sidor-->
+<html lang="sv">
+  <!--Head delen innehåller metadata som jag valt för min webplatsen -->
+  <head>
+    <!--I denna meta ska vi definiera nyckelord för sökmotorer.-->
+    <meta name="keywords" content="HTML, CSS" />
+    <!--Definiera den som har gjort webbplatsen.-->
+    <meta name="author" content="Sana Khattab" />
+    <!--Definiera lite beskrivning.-->
+    <meta name="description" content="Webbplats för en pizzeria" />
+    <!--för att ställa in visningsporten så att webbplatsen 
+            passar för alla enheter.-->
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta charset="utf-8" />
+    <!--Dokumentets title.-->
+    <title>Svalans pizzeria</title>
+    <link rel="stylesheet" href="css/index.css" />
+  </head>
+  <body>
+    <header class="header">
+      <img src="img/logo.png" alt="Svalans Pizzeria" />
+
+      <!-- Hamburger icon -->
+      <label class="hamb"><span class="hamb-line"></span></label>
+      <nav class="topnav">
+        <div class="menu">
+          <ul>
+            <li>
+              <a href="index.html"><h4>Hem</h4></a>
+            </li>
+            <li><a href="Meny.html">Meny</a></li>
+            <li><a href="Hitta.html">Hitta oss</a></li>
+            <li><a href="Kontakta.html">Kontakta oss</a></li>
+          </ul>
+        </div>
+      </nav>
+    </header>
+
+    <div class="text-box">
+      <b id="content-title">Välkommen till Svalans pizzeria</b>
+      <p>
+        Luncherbjudande<br />
+        Vardagar 10.00-13.30 Välj vad du vill från vår meny. Sallad och dryck
+        ingår i priset.<br />
+        FRÅN: 95:-
+      </p>
+
+      <pre>
+öppetider:
+                    Mån- Fre: 10:00-20:00
+                    Lör- Sön: 11:00-20:00
+                    </pre
+      >
+      <div class="boka">
+        <ul>
+          <li><a href="Meny.html">Boka nu</a></li>
+        </ul>
+      </div>
+    </div>
+    <div class="welcome-back"></div>
+
+    <!-- JavaScript code can be placed here -->
+    <!--<script src="javascript/index.js"></script>-->
+    <script src="java/index.js"></script>
+
+    <script
+      src="https://unpkg.com/react@16/umd/react.production.min.js"
+      crossorigin
+    ></script>
+    <script
+      src="https://unpkg.com/react-dom@16/umd/react-dom.production.min.js"
+      crossorigin
+    ></script>
+    <script src="https://unpkg.com/@babel/standalone/babel.min.js"></script>
+
+    <script type="text/babel" src="WelcomeBack.js"></script>
+
+    <script type="text/babel">
+      import WelcomeBack from "./WelcomeBack.js";
+
+      ReactDOM.render(<WelcomeBack />, document.querySelector(".welcome-back"));
+    </script>
+  </body>
+</html>
